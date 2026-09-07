@@ -1,0 +1,60 @@
+cff-version: 1.2.0
+message: >-
+  Neu ban su dung repository nay trong nghien cuu hoac hoc tap, vui long
+  trich dan phan mo rong TA-ACRF-RNN theo thong tin ben duoi, VA trich dan
+  bai bao nen ACRF-RNN (xem muc "references" ben duoi hoac preferred-citation).
+title: >-
+  TA-ACRF-RNN: Distributed Graph-Based Financial Fraud Detection
+  with Time-Aware Attention-based CRF and NebulaGraph
+type: software
+version: "1.0.0"
+date-released: "2026-08-05"
+repository-code: "https://github.com/NganNT357/ta-acrf-rnn-fraud-detection"
+license: MIT
+authors:
+  - family-names: "Nguyen"
+    given-names: "Tran Thao Nguyen"
+    affiliation: "University of Information Technology, VNU-HCM"
+  - family-names: "Nguyen"
+    given-names: "Thuy Ngan"
+    affiliation: "University of Information Technology, VNU-HCM"
+keywords:
+  - financial fraud detection
+  - graph neural network
+  - attention mechanism
+  - conditional random field
+  - distributed database
+  - PostgreSQL
+  - NebulaGraph
+  - Apache Spark
+abstract: >-
+  Do an mo rong mo hinh nen ACRF-RNN (IJCAI 2025) thanh TA-ACRF-RNN bang co
+  che time-aware relation, ket hop voi tang du lieu phan tan PostgreSQL va
+  NebulaGraph de luu tru, truy van va giai thich quan he rui ro giua cac
+  cong ty trong bai toan phat hien gian lan bao cao tai chinh. Day la do
+  an mon Du lieu lon (IS405), Khoa He thong Thong tin, Truong Dai hoc Cong
+  nghe Thong tin, DHQG-HCM.
+references:
+  - type: conference-paper
+    title: "Attention-based Conditional Random Field for Financial Fraud Detection"
+    authors:
+      - family-names: "Wang"
+        given-names: "Xiaoguang"
+      - family-names: "Wang"
+        given-names: "Chenxu"
+      - family-names: "Zhang"
+        given-names: "Luyue"
+      - family-names: "Wang"
+        given-names: "Xiaole"
+      - family-names: "Wang"
+        given-names: "Mengqin"
+    collection-title: "Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence (IJCAI-25)"
+    year: 2025
+    doi: "10.24963/ijcai.2025/870"
+    url: "https://www.ijcai.org/proceedings/2025/870"
+    repository-code: "https://github.com/XNetLab/ACRF-RNN"
+    notes: >-
+      Bai bao nen (base paper) ma repository nay tai hien (reproduce) va
+      mo rong (extend) thanh TA-ACRF-RNN. Vui long tham khao va tuan thu
+      dieu khoan cap phep rieng cua repository goc XNetLab/ACRF-RNN doi voi
+      ma nguon va du lieu cua ho.

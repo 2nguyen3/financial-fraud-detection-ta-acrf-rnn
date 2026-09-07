@@ -1,0 +1,77 @@
+-- ============================================================
+-- Schema NebulaGraph 
+-- Đề tài: Mô hình hóa quan hệ liên công ty theo thời gian
+-- ============================================================
+
+-- Đăng ký storage host cho NebulaGraph.
+-- Nếu host đã tồn tại, có thể bỏ qua lỗi "Host already exists".
+ADD HOSTS "nebula-storaged":9779;
+
+-- Tạo graph space chính.
+CREATE SPACE IF NOT EXISTS fraud_graph(
+  partition_num = 10,
+  replica_factor = 1,
+  vid_type = FIXED_STRING(64)
+);
+
+USE fraud_graph;
+
+-- ============================================================
+-- Vertex tags
+-- ============================================================
+
+-- Đỉnh công ty.
+CREATE TAG IF NOT EXISTS company(
+  company_id string
+);
+
+-- Đỉnh công ty theo từng mốc thời gian.
+-- Mỗi đỉnh company_year biểu diễn một công ty tại một năm cụ thể.
+CREATE TAG IF NOT EXISTS company_year(
+  company_year_id string,
+  company_id string,
+  year int,
+  label int
+);
+
+-- ============================================================
+-- Edge types
+-- ============================================================
+
+-- Cạnh nền: công ty có bản ghi tại một mốc thời gian.
+CREATE EDGE IF NOT EXISTS has_record(
+  year int,
+  label int
+);
+
+-- Cạnh phân tích: tương đồng giữa hai công ty trong cùng mốc thời gian.
+CREATE EDGE IF NOT EXISTS similar_in_year(
+  year int,
+  similarity double,
+  src_label int,
+  dst_label int
+);
+
+-- Cạnh phân tích: tương đồng được duy trì qua hai mốc thời gian liên tiếp trong tập dữ liệu.
+CREATE EDGE IF NOT EXISTS stable_similar(
+  year_from int,
+  year_to int,
+  similarity_from double,
+  similarity_to double,
+  avg_similarity double,
+  src_label_to int,
+  dst_label_to int,
+  both_fraud_to int
+);
+
+-- Kiểm tra schema.
+SHOW TAGS;
+SHOW EDGES;
+
+-- Edge lưu quan hệ chú ý được trích xuất từ attention weights của mô hình ACRF-RNN
+CREATE EDGE IF NOT EXISTS attention_relation(`year` int, attention_weight double, attention_weight_raw double, dst_mean_attention double, src_company_id int, dst_company_id int, src_label int, dst_label int, both_fraud int, edge_rank int, `method` string);
+
+
+-- Edge lưu quan hệ chú ý ổn định giữa hai công ty qua hai năm liên tiếp
+CREATE EDGE IF NOT EXISTS stable_attention_relation(year_from int, year_to int, attention_from double, attention_to double, avg_attention double, attention_delta double, attention_raw_from double, attention_raw_to double, avg_attention_raw double, attention_raw_delta double, dst_mean_attention_from double, dst_mean_attention_to double, avg_dst_mean_attention double, edge_rank_from int, edge_rank_to int, avg_edge_rank double, src_label_from int, dst_label_from int, src_label_to int, dst_label_to int, same_label_from int, same_label_to int, same_label_stable int, both_fraud_from int, both_fraud_to int, both_fraud_stable int, method_from string, method_to string);
+

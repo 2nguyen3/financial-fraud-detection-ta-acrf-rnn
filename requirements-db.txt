@@ -1,0 +1,4 @@
+psycopg2-binary>=2.9
+nebula3-python>=3.5.0
+networkx>=3.1
+pandas>=2.0

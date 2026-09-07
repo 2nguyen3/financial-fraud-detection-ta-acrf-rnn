@@ -1,0 +1,76 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.Python
+build/
+dist/
+*.egg
+
+# --- Virtual env ---
+.venv/
+venv/
+env/
+
+# --- Jupyter / Colab (notebooks/01_spark_pipeline, 02_acrf_rnn_baseline, 03_ta_acrf_rnn) --- 
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# --- data/  ---
+
+# data/raw/
+data/raw/*
+!data/raw/.gitkeep
+
+# data/processed/  (train.parquet, val.parquet, test_2018/2019/2020.parquet,
+#                    scaler_model/, processed_flat, statistics)
+data/processed/*
+!data/processed/.gitkeep
+
+# data/graph_data/  (edge CSV dung de import vao NebulaGraph)
+data/graph_data/*
+!data/graph_data/.gitkeep
+!data/graph_data/*_sample.csv
+
+# Dinh dang / ten cu the hay gap trong data/processed
+*.parquet
+scaler_model/
+processed_flat
+statistics
+
+# --- File nen ---
+*.zip
+*.tar.gz
+*.rar
+
+# --- database/  
+database/**/pgdata*/
+database/**/nebula_data/
+database/**/nebula_logs/
+database/nebula/data/
+database/nebula/logs/
+*.rdb
+
+# --- Model checkpoints & logs ---
+*.pt
+*.pth
+*.ckpt
+runs/
+wandb/
+mlruns/
+
+# --- docs/  ---
+docs/slide/*.pdf
+docs/slide/*.pptx
+
+# --- Secrets / config ---
+.env
+*.local.yml
+**/secrets.yaml
+**/*_credentials.json
+
+# --- OS / Editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

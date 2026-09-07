@@ -1,0 +1,52 @@
+MIT License
+
+Copyright (c) 2026 Nguyen Tran Thao Nguyen and Nguyen Thuy Ngan
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## GHI CHU VE PHAM VI AP DUNG (SCOPE NOTE)
+
+Giay phep MIT o tren chi ap dung cho phan ma nguon do nhom tu phat trien trong
+repository nay, bao gom nhung khong gioi han:
+
+- Pipeline tien xu ly du lieu bang Apache Spark (notebooks/01_spark_pipeline).
+- Mo hinh cai tien TA-ACRF-RNN va co che time-aware relation
+  (notebooks/03_ta_acrf_rnn, database liên quan).
+- Tang du lieu phan tan PostgreSQL va NebulaGraph, bao gom app_node,
+  schema, script import va truy van (database/app, database/nebula,
+  database/sql, database/scripts).
+
+Repository nay KHONG cap phep lai va KHONG chiu trach nhiem ve:
+
+- Kien truc va bat ky doan ma nao duoc sao chep truc tiep tu repository
+  goc cua bai bao nen "Attention-based Conditional Random Field for
+  Financial Fraud Detection" (IJCAI 2025), tai:
+  https://github.com/XNetLab/ACRF-RNN
+  Phan nay (neu con giu lai, vi du trong notebooks/02_acrf_rnn_baseline
+  de doi chieu ket qua) tuan theo dieu khoan cap phep cua repository goc;
+  vui long tham khao truc tiep LICENSE cua XNetLab/ACRF-RNN truoc khi
+  su dung lai.
+- Bo du lieu tai chinh cong ty-nam (raw/processed) khong duoc dinh kem
+  trong repository nay.
+
+Neu ban su dung lai ma nguon trong repository nay cho muc dich nghien cuu
+hoac hoc tap, vui long trich dan ca repository nay (xem CITATION.cff) va
+bai bao nen ACRF-RNN (IJCAI 2025).
