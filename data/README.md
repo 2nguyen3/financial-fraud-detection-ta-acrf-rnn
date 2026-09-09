@@ -48,8 +48,9 @@ epoch/ngưỡng (tuned trên validation 2017); `test_2018/2019/2020.parquet`
 dùng để đánh giá cuối cùng, không được dùng trong quá trình tuning.
 
 **Cách tái tạo:** chạy toàn bộ `notebooks/01_spark_pipeline/Spark_Pipeline.ipynb`
-với `raw/` đã có dữ liệu đầu vào. Không cần chạy lại nếu bạn tải sẵn
-`processed.zip` được đính kèm ở GitHub Releases (nếu có công bố).
+với `raw/` đã có dữ liệu đầu vào. Nếu chỉ cần chạy lại mô hình, tải
+[`processed.zip` từ release v1.0.0](https://github.com/2nguyen3/financial-fraud-detection-ta-acrf-rnn/releases/download/v1.0.0/processed.zip)
+và giải nén vào thư mục `data/processed/`.
 
 ## 3. `graph_data/` — Cạnh quan hệ liên công ty
 
@@ -62,10 +63,9 @@ import vào NebulaGraph bằng
 - **Attention Graph** — cạnh dựa trên trọng số attention mà mô hình
   TA-ACRF-RNN học được giữa các công ty.
 
-Repository chỉ commit sẵn vài file `*_sample.csv` (dữ liệu mẫu, vài dòng) để
-minh hoạ đúng định dạng cột — không chứa toàn bộ cạnh thật. Để có đầy đủ
-`graph_data/`, cần chạy lại notebook huấn luyện (`03_ta_acrf_rnn`) hoặc bước
-sinh Cosine Graph sau khi đã có `processed/`.
+Các file cạnh đầy đủ không được commit vào repository. Để tạo `graph_data/`,
+cần chạy notebook huấn luyện `03_ta_acrf_rnn` hoặc các script sinh Cosine
+Graph sau khi đã có dữ liệu trong `processed/`.
 
 ## Vì sao không commit dữ liệu thật vào Git
 
