@@ -1,15 +1,14 @@
 cff-version: 1.2.0
 message: >-
-  Neu ban su dung repository nay trong nghien cuu hoac hoc tap, vui long
-  trich dan phan mo rong TA-ACRF-RNN theo thong tin ben duoi, VA trich dan
-  bai bao nen ACRF-RNN (xem muc "references" ben duoi hoac preferred-citation).
+  If you use this repository for research or education, please cite this
+  software and the original ACRF-RNN paper listed in references.
 title: >-
   TA-ACRF-RNN: Distributed Graph-Based Financial Fraud Detection
   with Time-Aware Attention-based CRF and NebulaGraph
 type: software
 version: "1.0.0"
-date-released: "2026-08-05"
-repository-code: "https://github.com/NganNT357/ta-acrf-rnn-fraud-detection"
+date-released: "2026-09-09"
+repository-code: "https://github.com/2nguyen3/financial-fraud-detection-ta-acrf-rnn"
 license: MIT
 authors:
   - family-names: "Nguyen"
@@ -20,7 +19,7 @@ authors:
     affiliation: "University of Information Technology, VNU-HCM"
 keywords:
   - financial fraud detection
-  - graph neural network
+  - time-series analysis
   - attention mechanism
   - conditional random field
   - distributed database
@@ -28,12 +27,10 @@ keywords:
   - NebulaGraph
   - Apache Spark
 abstract: >-
-  Do an mo rong mo hinh nen ACRF-RNN (IJCAI 2025) thanh TA-ACRF-RNN bang co
-  che time-aware relation, ket hop voi tang du lieu phan tan PostgreSQL va
-  NebulaGraph de luu tru, truy van va giai thich quan he rui ro giua cac
-  cong ty trong bai toan phat hien gian lan bao cao tai chinh. Day la do
-  an mon Du lieu lon (IS405), Khoa He thong Thong tin, Truong Dai hoc Cong
-  nghe Thong tin, DHQG-HCM.
+  This project reproduces and extends the ACRF-RNN model introduced at IJCAI
+  2025. TA-ACRF-RNN adds time-aware inter-company relations and integrates an
+  Apache Spark processing pipeline with PostgreSQL and NebulaGraph components
+  for distributed storage, querying, and analysis of company risk relations.
 references:
   - type: conference-paper
     title: "Attention-based Conditional Random Field for Financial Fraud Detection"
@@ -48,13 +45,14 @@ references:
         given-names: "Xiaole"
       - family-names: "Wang"
         given-names: "Mengqin"
-    collection-title: "Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence (IJCAI-25)"
+      - family-names: "Liu"
+        given-names: "Huanlong"
+      - family-names: "Qin"
+        given-names: "Tao"
+    collection-title: >-
+      Proceedings of the Thirty-Fourth International Joint Conference on
+      Artificial Intelligence
     year: 2025
     doi: "10.24963/ijcai.2025/870"
-    url: "https://www.ijcai.org/proceedings/2025/870"
+    url: "https://doi.org/10.24963/ijcai.2025/870"
     repository-code: "https://github.com/XNetLab/ACRF-RNN"
-    notes: >-
-      Bai bao nen (base paper) ma repository nay tai hien (reproduce) va
-      mo rong (extend) thanh TA-ACRF-RNN. Vui long tham khao va tuan thu
-      dieu khoan cap phep rieng cua repository goc XNetLab/ACRF-RNN doi voi
-      ma nguon va du lieu cua ho.
